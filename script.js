@@ -222,25 +222,3 @@ form_status.addEventListener('submit', (e) => {
     }
 });
 
-// Text Styling
-const texts = [
-    { text: "Adnan Amin", dataText: "Adnan Amin" },
-    { text: ".NET Developer", dataText: ".NET Developer" }
-];
-
-let index = 0; // Track the current index
-
-function updateText() {
-    // Get the tag-line-text element
-    const tagLineText = document.querySelector('.tag-line-text');
-    
-    // Update the text and data-text attribute
-    tagLineText.textContent = texts[index].text;
-    tagLineText.setAttribute('data-text', texts[index].dataText);
-    
-    // Move to the next text in the array
-    index = (index + 1) % texts.length;
-}
-
-// Update text every 10 seconds
-setInterval(updateText, 5000); // 10000 ms = 10 seconds
