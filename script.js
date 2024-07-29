@@ -1,8 +1,8 @@
+// Dark mode toggle
 const colorModeButton = document.querySelector('.color-mode');
 colorModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
 });
-
 
 document.querySelector('.color-mode').addEventListener('click', function () {
     const icon = this.querySelector('i');
@@ -11,10 +11,9 @@ document.querySelector('.color-mode').addEventListener('click', function () {
     } else {
         icon.className = 'ri-moon-line';
     }
-})
+});
 
-
-
+// Skill animation
 function animateSkills() {
     let circleProgress = document.querySelector('.circle'),
         progressValue = document.querySelector('.percent');
@@ -76,10 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection);
 });
 
-
-
-
-
 // Menu Option for responsive
 const menuBtn = document.querySelector('.menu_btn');
 const firstPage = document.getElementById('first-page');
@@ -97,11 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // Form Submission
-
-
-
 function clearBoxes() {
     document.getElementById('Subject').value = "";
     document.getElementById('name').value = "";
@@ -129,6 +120,7 @@ function checkEmail() {
         return true;
     }
 }
+
 function emailCorrection() {
     const validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let emailInput = document.getElementById('Email');
@@ -222,13 +214,6 @@ function sendEmail() {
     });
 }
 
-function clearBoxes() {
-    document.getElementById('Subject').value = "";
-    document.getElementById('name').value = "";
-    document.getElementById('Email').value = "";
-    document.getElementById('Message').value = "";
-}
-
 let form_status = document.querySelector('form');
 form_status.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -237,8 +222,25 @@ form_status.addEventListener('submit', (e) => {
     }
 });
 
+// Text Styling
+const texts = [
+    { text: "Adnan Amin", dataText: "Adnan Amin" },
+    { text: ".NET Developer", dataText: ".NET Developer" }
+];
 
+let index = 0; // Track the current index
 
+function updateText() {
+    // Get the tag-line-text element
+    const tagLineText = document.querySelector('.tag-line-text');
+    
+    // Update the text and data-text attribute
+    tagLineText.textContent = texts[index].text;
+    tagLineText.setAttribute('data-text', texts[index].dataText);
+    
+    // Move to the next text in the array
+    index = (index + 1) % texts.length;
+}
 
-// Contact Form Validation
-
+// Update text every 10 seconds
+setInterval(updateText, 5000); // 10000 ms = 10 seconds

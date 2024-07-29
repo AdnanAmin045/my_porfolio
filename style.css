@@ -114,6 +114,7 @@ a{
 }
 .home img{
     width: 26vw;
+    z-index: 999;
 }
 .heading-p1{
     font-size: 1vw;
@@ -127,29 +128,122 @@ a{
     color: var(--primary-color--);
 
 }
-.swap-words{
-    display: inline-block;
-    position: relative;
-    height: 1.2em; 
-    overflow: hidden;
-    font-weight: bolder;
+.tag-line{
+    position:relative;
+    height: 4.1vw;
+    width: 23vw;
 }
-.swap-words span{
-    display: block;
-    margin-left: 14px;
-    animation: spin-words 5s infinite;
+.tag-line-text{  
+    color: var(--body-color--);
+    font-weight: 700;
     color: #3b63ff;
 }
-@keyframes spin-words {
+.tag-line-text::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    animation: animate 5s steps(20) infinite 5s;
+}
+@keyframes animate {
+    0%,100% {
+        left: 0;
+    }
+    10% {
+        left: 10%;
+    }
+    20%{
+        left: 20%;
+    }
     30%{
-        transform: translateY(-100%);
+        left: 30%;
     }
     40%{
-        transform: translateY(-102%);
+        left: 40%;
+    }
+    50%{
+        left: 50%;
+    }
+    60%{
+        left: 60%;
+    }
+    70%{
+        left: 70%;
+    }
+    80%{
+        left: 80%;
+    }
+    90%{
+        left: 100%;
     }
 }
-    
+/* .tag-line{
+    display: flex;
+    flex-direction: column;
+    color: #3b63ff;
+    font-weight: 600;
+    position: relative;
+}
+.tag-line span{
+    display: block;
+}
+.tag-line::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    background: var(--body-color--);
+    border-left: 2px solid #3b63ff;
+    animation: animate 10s linear infinite;
 
+}
+@keyframes animate {
+    0%,100%
+    {
+        left: 0%;
+    }
+    10%
+    {
+        left: 10%;    
+    }
+    20%
+    {
+        left: 20%;
+    }
+    30%
+    {
+        left: 30%;   
+    }
+    40%
+    {
+        left: 40%;
+    }
+    50%
+    {
+        left: 50%;
+    }
+    60%
+    {
+        left: 60%;
+    }
+    70%
+    {
+        left: 70%;
+    }
+    80%
+    {
+        left: 80%;
+    }
+    90%
+    {
+        left: 100%;
+    }  
+} */
 .home-part2{
     display: flex;
     justify-content: space-evenly;
@@ -791,9 +885,6 @@ hr{
     overflow-wrap: break-word;
     padding: 0.5vw;
 }
-.question-parts p{
-    overflow-wrap: none;
-}
 .footer-logo{
     display: flex;
     gap: 1vw;
@@ -950,10 +1041,11 @@ hr{
         align-self: flex-start;
     }
     .about-me{
-        font-size: 7vw;
+        font-size: 8vw;
+        padding-bottom: 3vw;
     }
     .personal-detail{
-        font-size: 4vw;
+        font-size: 5vw;
     }
     .section-part2{
         display: none;
