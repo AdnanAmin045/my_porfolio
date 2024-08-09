@@ -227,9 +227,10 @@ a{
     height: 0.645234vw;
 }
 .heading-p1{
-    font-size: 1vw;
+    font-size: 1.5vw;
     letter-spacing: 0.4vw;
     color:#3b63ff ;
+    font-weight:500;
 }
 .heading-p2{
     font-size: 3vw;
